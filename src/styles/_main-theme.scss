@@ -1,0 +1,63 @@
+#root {
+  width: 100%;
+}
+
+.gutters {
+  background-color: #858585;
+  height: 100vh;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 55px);
+  margin: 0 auto;
+  max-width: 1080px;
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 12px;
+}
+
+.main-row {
+  height: 55%;
+}
+
+.secondary-row {
+  height: 35%;
+}
+
+.card {
+  background-color: #dcdcdc;
+  border-radius: 15px;
+  color: black;
+  filter: drop-shadow(10px 10px 4px #363636);
+  margin: 12px;
+  .card-inner {
+    margin: 8px;
+    text-align: center;
+    h3 {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+  }
+}
+
+.main-card-left {
+  height: 100%;
+  width: 65%;
+}
+
+.main-card-right {
+  height: 100%;
+  width: 35%;
+}
+
+.secondary-card {
+  width: 35%;
+}
