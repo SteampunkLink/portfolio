@@ -37,8 +37,10 @@
   border-radius: 15px;
   color: black;
   filter: drop-shadow(10px 10px 4px #363636);
+  height: 100%;
   margin: 12px;
   .card-inner {
+    height: 95%;
     margin: 8px;
     text-align: center;
     h3 {
@@ -60,4 +62,8 @@
 
 .secondary-card {
   width: 35%;
+}
+
+.selected {
+  font-weight: bold;
 }

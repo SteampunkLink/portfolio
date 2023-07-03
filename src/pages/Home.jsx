@@ -1,20 +1,37 @@
+import { useState, useEffect, useRef } from "react";
+import SelectedProject from "../components/home/SelectedProject";
+import projectData from "../data/project-data";
+
 const Home = () => {
+  const [selectedProject, setSelectedProject] = useState(0);
+  const slider = useRef(null);
+  useEffect(() => {
+    slider.current = setInterval(() => {
+      let newSelected = selectedProject + 1 === projectData.length ? 0 : selectedProject + 1;
+      setSelectedProject(newSelected);
+    }, 5000);
+
+    return () => clearInterval(slider.current);
+  })
   return (
     <>
       <div className="row main-row">
         <div className="card main-card-left">
           <div className="card-inner">
-            <h3>Selected Project</h3>
+            {projectData.map((project, idx) => {
+              return idx === selectedProject ? <SelectedProject key={idx} project={project} /> : null 
+            })}
           </div>
         </div>
         <div className="card main-card-right">
           <div className="card-inner">
             <h3>My Projects</h3>
             <ul>
-              <li>Honest Piranha</li>
-              <li>Fun Demos</li>
-              <li>Another Project</li>
-              <li>Silver SuperStore</li>
+              {projectData.map((project, idx) => <li key={idx} className={
+                  project.title === projectData[selectedProject].title ? "selected" : "list-item"
+                }>
+                {project.title}
+              </li>)}
             </ul>
           </div>
         </div>
